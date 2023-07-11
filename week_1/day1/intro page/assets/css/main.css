@@ -1,0 +1,36 @@
+.box {
+    /*background-color: white;*/
+    width: 920px;
+    height: 200px;
+    font-size: 20px;
+    color: black;
+    border: 5px solid rgb(197, 162, 218);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    /* padding: 10px; */
+}
+
+html, body {
+    padding: 0;
+}
+body {
+    background-color: #FDFBC6;
+    color: rgb(197, 162, 218);
+    text-align: center;
+}
+section {
+    padding: 0 25px;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.myform {
+    color: black;
+    text-align: center;
+}
+
+
