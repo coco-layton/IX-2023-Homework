@@ -70,34 +70,19 @@ class UI {
 
     
       // add action buttons
-      const actionButtons = this.createActionButtons();
-      tdActions.appendChild(actionButtons[0]);
-      tdActions.appendChild(actionButtons[1]);
+      const deleteButton = document.createElement('button');
+      deleteButton.setAttribute('class', 'btn btn-danger btn-sm me-1');
+      deleteButton.innerHTML = 'Delete';
+      deleteButton.addEventListener('click', () => {
+        console.log('Delete was clicked');
+      });
+      tdActions.appendChild(deleteButton);
   
       tr.appendChild(tdTask);
       tr.appendChild(tdComplete);
       tr.appendChild(tdActions);
   
       return tr;
-    }
-  
-    createActionButtons() {
-      const deleteButton = document.createElement('button');
-      const editButton = document.createElement('button');
-  
-      deleteButton.setAttribute('class', 'btn btn-danger btn-sm me-1');
-      deleteButton.innerHTML = 'Delete';
-      deleteButton.addEventListener('click', () => {
-        console.log('Delete was clicked');
-      });
-  
-      editButton.setAttribute('class', 'btn btn-warning btn-sm ms-1');
-      editButton.innerHTML = 'Edit';
-      editButton.addEventListener('click', () => {
-        console.log('Edit was clicked');
-      });
-  
-      return [deleteButton, editButton];
     }
   }
   
