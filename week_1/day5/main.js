@@ -7,7 +7,7 @@ class Task {
   }
 
   static fromJSON(json) {
-    return new Book(json.title, json.author, json.isbn);
+    return new Task(json.taskName);
   }
 }
 
