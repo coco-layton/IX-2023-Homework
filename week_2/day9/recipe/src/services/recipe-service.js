@@ -25,7 +25,8 @@ import {
       const recipes = [];
       querySnapshot.forEach((doc) => {
         const data = doc.data();
-        const recipe = new Recipe(data.name, data.ingredients, data.time);
+        console.log("type: " + typeof(data));
+        const recipe = new Recipe(data.name, data.ingredients, data.time, doc.id);
         recipes.push(recipe);
       });
   
@@ -35,30 +36,18 @@ import {
     async createRecipe(recipe) {
       const collectionRef = collection(db, this.collection);
   
-      await addDoc(collectionRef, {
+      const docRef = await addDoc(collectionRef, {
         name: recipe.name,
         ingredients: recipe.ingredients,
         time: recipe.time,
       });
-  
-      //task.id = docRef.id;
+
+      recipe.id = docRef.id;
       return recipe;
     }
-    
-    // async updateRecipe(recipe) {
-    //     const docRef = doc(db, this.collection, recipe.name);
-    
-    //     await updateDoc(docRef, {
-    //       name: recipe.name,
-    //       ingredients: recipe.ingredients,
-    //       time: recipe.time,
-    //     });
-    
-    //     return recipe;
-    //   }
   
-    async deleteRecipe(recipeName) {
-      const docRef = doc(db, this.collection, recipeName);
+    async deleteRecipe(recipeId) {
+      const docRef = doc(db, this.collection, recipeId);
       await deleteDoc(docRef);
     }
   }

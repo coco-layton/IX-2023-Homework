@@ -30,14 +30,14 @@ function App() {
     }
   }
 
-  async function onRecipeCreate(name, ingredients, time) {
-    const recipe = await RecipeService.createRecipe(new Recipe(name, ingredients, time));
+  async function onRecipeCreate(name, ingredients, time, id) {
+    const recipe = await RecipeService.createRecipe(new Recipe(name, ingredients, time, id));
     setRecipes([...recipes, recipe]);
   }
 
   async function onRecipeDelete(recipe) {
-    await RecipeService.deleteRecipe(recipe.name);
-    setRecipes(recipes.filter((x) => x.name !== recipe.name));
+    await RecipeService.deleteRecipe(recipe.id);
+    setRecipes(recipes.filter((x) => x.id !== recipe.id));
   }
 
 
