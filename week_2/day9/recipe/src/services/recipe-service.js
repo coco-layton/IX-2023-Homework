@@ -17,7 +17,7 @@ import {
       this.collection = 'recipes';
     }
   
-    async fetchTasks() {
+    async fetchRecipes() {
       const collectionRef = collection(db, this.collection);
       const q = query(collectionRef);
       const querySnapshot = await getDocs(q);

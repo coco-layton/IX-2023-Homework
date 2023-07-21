@@ -15,7 +15,7 @@ export default function RecipeTable(props) {
         <tbody>
           {props.recipes.map((recipe) => {
             return (
-              <tr key={recipe.name}>
+              <tr key={recipe.id}>
                 <td>{recipe.name}</td>
                 <td>{recipe.ingredients}</td>
                 <td>{recipe.time}</td>
